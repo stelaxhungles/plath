@@ -46,9 +46,10 @@ function keyPressed() {
                 output += RiTa.randomWord('nn', 2);
             } else if (RiTa.isPunctuation(words[i])){ 
                 i = words.length;
-            } else {
+            }else {
                 output += words[i];
             }
+            if (i == 8) {output += "<br>";}
             output += " ";
         }
 
@@ -57,5 +58,16 @@ function keyPressed() {
     
     else if (keyCode == ENTER) {
         location.reload()
+    }
+    
+    else if (keyCode == BACKSPACE) {
+        var ele = document.getElementsByClassName('content');
+        var lastEle = ele[ ele.length-1 ];
+        lastEle.remove();
+
+    }
+    
+    else if (keyCode == DOWN_ARROW) {
+        drawText("<br>");
     }
 }

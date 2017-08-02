@@ -15,7 +15,12 @@ p {
 }
 
 .title {
+    font-size:x-large;
     text-align:center;
     color:orange;
     font-family: 'Inconsolata', monospace;
+}
+
+#inst {
+    text-align: left;
 }

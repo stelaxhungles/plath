@@ -1,5 +1,5 @@
  
-var lines, markov, data1, x = 300, y = 300;
+var lines, markov, data1;
 var font;
 var input;
 
@@ -9,8 +9,7 @@ function preload() {
 }
 
 function setup() {
-    
-  //createCanvas(windowWidth, windowHeight);
+
   textFont(font);
   
     
@@ -23,46 +22,42 @@ function setup() {
   markov.loadText(data1.join(' '));
 
   var title = createDiv(lines);
-  title.id("title");
+  title.class("title");
 }
 
 function drawText(output) {
 
-  //background(255);
   textAlign(CENTER);
   var poem = createP(output);
   poem.class("content");
-  //text(output, x, y, 400, 400);
 }
 
-function mouseClicked() {
-  
-  x = windowWidth/2-300;
-  y = windowHeight/2-100;
-  lines = markov.generateSentences(1);
-    
-    var rs = new RiString(lines);
-    rs1 = new RiString(rs._text[0])
-    var words = rs1.words();
-    console.log(rs1);
-    
-    var output = '';
-    for (var i = 0; i < words.length; i++){
-//        if (RiTa.isAdjective(words[i])){
-//            output += RiTa.randomWord('jj', 2);
-//        } else
-        if (RiTa.isNoun(words[i])){
-            output += RiTa.randomWord('nn', 2);
-        } else if (RiTa.isPunctuation(words[i])){
-            //output += "\n\n";   
-            i = words.length;
-        } else {
-            output += words[i];
-        }
-        output += " ";
-    }
+function keyPressed() {
+    if (keyCode == 32) { 
+      lines = markov.generateSentences(1);
 
-  drawText(output);
+        var rs = new RiString(lines);
+        rs1 = new RiString(rs._text[0])
+        var words = rs1.words();
+
+        var output = '';
+        for (var i = 0; i < words.length; i++){
+            if (RiTa.isNoun(words[i])){
+                output += RiTa.randomWord('nn', 2);
+            } else if (RiTa.isPunctuation(words[i])){ 
+                i = words.length;
+            } else {
+                output += words[i];
+            }
+            output += " ";
+        }
+
+      drawText(output);
+    }
+    
+    else if (keyCode == ENTER) {
+        
+    }
 }
 
  

@@ -1,0 +1,21 @@
+a {
+    font-family: 'Inconsolata', monospace;
+    color:olivedrab;
+    text-decoration: none;
+}
+
+a:hover {
+    color:lightcoral;
+}
+
+p {
+    font-family: 'Inconsolata', monospace;
+    position: relative;
+    text-align: center;
+}
+
+#title {
+    text-align:center;
+    color:orange;
+    font-family: 'Inconsolata', monospace;
+}

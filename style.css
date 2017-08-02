@@ -17,6 +17,13 @@ p {
 .title {
     font-size:x-large;
     text-align:center;
-    color:orange;
+    color:red;
     font-family: 'Inconsolata', monospace;
+}
+
+#about_body {
+    background-color: cornflowerblue;
+    color:white;
+    background-size: 100%;
+    background-image: url("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif");
 }

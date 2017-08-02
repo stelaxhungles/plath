@@ -39,18 +39,21 @@ function keyPressed() {
         var rs = new RiString(lines);
         rs1 = new RiString(rs._text[0])
         var words = rs1.words();
-
+        var pos = rs1.pos();
+        //console.log(pos);
+        console.log(words);
         var output = '';
         for (var i = 0; i < words.length; i++){
-            if (RiTa.isNoun(words[i])){
-                output += RiTa.randomWord('nn', 2);
+            if (/nn.*/.test(pos[i])){
+                output += RiTa.randomWord(pos[i], 2);
             } else if (RiTa.isPunctuation(words[i])){ 
+                output += words[i];
                 i = words.length;
             }else {
                 output += words[i];
             }
             if (i == 8) {output += "<br>";}
-            output += " ";
+            if (i!==words.length-2){output += " ";}
         }
 
       drawText(output);

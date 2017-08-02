@@ -56,51 +56,6 @@ function keyPressed() {
     }
     
     else if (keyCode == ENTER) {
-        
+        location.reload()
     }
 }
-
- 
-
-
-
-
-
-
-
-
-//var input;
-//var button;
-//
-//
-//
-//function setup(){
-//    noCanvas;
-//    
-//    
-//    input = createInput('it was a dark and stormy night.');
-//    button = createButton('submit');
-//    input.changed(processRita);
-//    button.mousePressed(processRita);
-//    input.size(300);
-//}
-//
-//function processRita(){
-//    var s = input.value();
-//    var rs = new RiString(s);
-//    var words = rs.words();
-//    console.log(s);
-//    
-//    var output = '';
-//    for (var i = 0; i < words.length; i++){
-//        if (RiTa.isAdjective(words[i])){
-//            output += RiTa.randomWord('jj', 5);
-//        } else if (RiTa.isNoun(words[i])){
-//            output += RiTa.randomWord('nn', 5);
-//        } else {
-//            output += words[i];
-//        }
-//        output += " ";
-//    }
-//    createP(output);
-//}
